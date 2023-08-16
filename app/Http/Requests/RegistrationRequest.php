@@ -25,7 +25,7 @@ class RegistrationRequest extends FormRequest
             'phone_number' => 'required',
             'mobile_network' => 'required',
             'message' => 'required',
-            'ref_code' => 'required|unique:ref_codes',
+            'ref_code' => 'required|unique:referrals',
         ];
     }
 }

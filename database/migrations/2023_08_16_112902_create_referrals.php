@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ref_codes', function (Blueprint $table) {
+        Schema::create('referrals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('code');
+            $table->foreignId('user_id')->constrained();
+            $table->string('ref_code');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ref_codes');
+        Schema::dropIfExists('referrals');
     }
 };
